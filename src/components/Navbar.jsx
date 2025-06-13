@@ -1,7 +1,9 @@
-import React, { use, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../contexts/AuthProvider';
+import { FaMoon, FaSun } from 'react-icons/fa';
+
 
 const Navbar = () => {
 const{user,logOut}=use(AuthContext);
@@ -24,6 +26,31 @@ const handleLogOut=()=>{
     console.log(error)
   })
 }
+
+
+
+const [isDark, setIsDark] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    if (isDark) {
+      root.classList.add("dark");
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark(!isDark);
+
+
+
 
     return (
         
@@ -166,7 +193,7 @@ const handleLogOut=()=>{
           )
         }
 
-
+<button onClick={toggleTheme}>{isDark?<FaMoon></FaMoon>:<FaSun/>}</button>
 
 {/* 
 <img className='w-12 rounded-full' src={`${user ? user.photoURL:" "}`} alt=""/>

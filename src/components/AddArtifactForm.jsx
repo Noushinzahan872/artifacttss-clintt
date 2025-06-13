@@ -99,10 +99,10 @@ const AddArtifactForm = () => {
   if (!user) return <p>Loading user…</p>;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+    <div className="min-h-screen flex items-center justify-center p-6">
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-lg rounded-lg p-8 w-full max-w-2xl space-y-6"
+        className=" shadow-lg rounded-lg p-8 w-full max-w-2xl space-y-6"
       >
         <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
           Add Artifacts
@@ -111,7 +111,7 @@ const AddArtifactForm = () => {
         {/* Name & Image URL */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-700">Artifact Name</span>
+            <span className="">Artifact Name</span>
             <input
               name="name"
               value={form.name}
@@ -122,7 +122,7 @@ const AddArtifactForm = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-700">Image URL</span>
+            <span className="">Image URL</span>
             <input
               name="imageUrl"
               type="url"
@@ -137,7 +137,7 @@ const AddArtifactForm = () => {
 
         {/* Type */}
         <label className="block">
-          <span className="text-gray-700">Type</span>
+          <span className="">Type</span>
           <select
             name="type"
             value={form.type}
@@ -152,7 +152,7 @@ const AddArtifactForm = () => {
 
         {/* Context & Description */}
         <label className="block">
-          <span className="text-gray-700">Historical Context</span>
+          <span className="">Historical Context</span>
           <textarea
             name="context"
             rows="3"
@@ -162,7 +162,7 @@ const AddArtifactForm = () => {
           />
         </label>
         <label className="block">
-          <span className="text-gray-700">Short Description</span>
+          <span className="">Short Description</span>
           <textarea
             name="description"
             rows="2"
@@ -175,7 +175,7 @@ const AddArtifactForm = () => {
         {/* CreatedAt & DiscoveredAt */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-700">Created At</span>
+            <span className="">Created At</span>
             <input
               name="createdAt"
               placeholder="e.g. 100 BC"
@@ -185,7 +185,7 @@ const AddArtifactForm = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-700">Discovered At</span>
+            <span className="">Discovered At</span>
             <input
               name="discoveredAt"
               placeholder="e.g. 1799"
@@ -199,7 +199,7 @@ const AddArtifactForm = () => {
         {/* Discovered By & Present Location */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-700">Discovered By</span>
+            <span className="">Discovered By</span>
             <input
               name="discoveredBy"
               value={form.discoveredBy}
@@ -208,7 +208,7 @@ const AddArtifactForm = () => {
             />
           </label>
           <label className="block">
-            <span className="text-gray-700">Present Location</span>
+            <span className="">Present Location</span>
             <input
               name="presentLocation"
               value={form.presentLocation}
@@ -221,23 +221,23 @@ const AddArtifactForm = () => {
         {/* Read‑only User Info */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <label className="block">
-            <span className="text-gray-700">Your Name</span>
+            <span className="">Your Name</span>
             <input
               name="adderName"
               type="text"
               value={form.adderName}
               readOnly
-              className="mt-1 w-full px-4 py-2 border bg-gray-100 rounded-md"
+              className="mt-1 w-full px-4 py-2 border rounded-md"
             />
           </label>
           <label className="block">
-            <span className="text-gray-700">Your Email</span>
+            <span className="">Your Email</span>
             <input
               name="adderEmail"
               type="email"
               value={form.adderEmail}
               readOnly
-              className="mt-1 w-full px-4 py-2 border bg-gray-100 rounded-md"
+              className="mt-1 w-full px-4 py-2 border rounded-md"
             />
           </label>
         </div>

@@ -99,7 +99,7 @@ const MyArtifacts = () => {
               </tr>
             </thead>
 
-            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+            <tbody className=" dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {artifacts.map((artifact, index) => (
                 <tr
                   key={artifact._id}
