@@ -1,0 +1,242 @@
+import React, { useState, useEffect, useContext } from 'react';
+
+import Swal from 'sweetalert2';
+import { AuthContext } from '../contexts/AuthProvider';
+import { useNavigate, useParams } from 'react-router';
+
+
+const UpdateArtifact = () => {
+    const { user } = useContext(AuthContext);
+  const { id } = useParams(); // Get artifact ID from route param
+  const navigate = useNavigate();
+  
+
+  const [form, setForm] = useState({
+    name: '',
+    imageUrl: '',
+    type: 'Tools',
+    context: '',
+    description: '',
+    createdAt: '',
+    discoveredAt: '',
+    discoveredBy: '',
+    presentLocation: '',
+    adderName: '',
+    adderEmail: ''
+  });
+
+  const [loading, setLoading] = useState(true);
+
+  // Fetch existing artifact by ID
+  useEffect(() => {
+    fetch(`http://localhost:3000/artifacts/${id}`)
+      .then(res => res.json())
+      .then(data => {
+        setForm(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load artifact:', err);
+        setLoading(false);
+        Swal.fire('Error', 'Unable to load artifact data', 'error');
+      });
+  }, [id]);
+
+
+ useEffect(() => {
+    if (user) {
+      setForm(prev => ({
+        ...prev,
+        userName: user.displayName || '',
+        userEmail: user.email || ''
+      }));
+    }
+  }, [user]);
+
+
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    //  const { _id, ...safeForm } = form;
+    console.log("Submitting update with data:", form);
+
+    fetch(`http://localhost:3000/artifacts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.modifiedCount > 0) {
+          Swal.fire('Success', 'Artifact updated successfully!', 'success');
+          navigate('/artifacts'); // or wherever you want to go
+        } else {
+          Swal.fire('Notice', 'No changes were made.', 'info');
+        }
+      })
+      .catch(err => {
+        console.error('Update failed:', err);
+        Swal.fire('Error', 'Something went wrong while updating', 'error');
+      });
+  };
+
+  if (loading) return <p className="text-center mt-10">Loading artifact data...</p>;
+
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-lg p-8 w-full max-w-2xl space-y-6"
+      >
+        <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+          Update Artifacts
+        </h2>
+
+        {/* Reuse the same form fields as in AddArtifactForm */}
+        {/* Name & Image URL */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="text-gray-700">Artifact Name</span>
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+          <label className="block">
+            <span className="text-gray-700">Image URL</span>
+            <input
+              name="imageUrl"
+              value={form.imageUrl}
+              onChange={handleChange}
+              required
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+        </div>
+
+        {/* Type Dropdown */}
+        <label className="block">
+          <span className="text-gray-700">Type</span>
+          <select
+            name="type"
+            value={form.type}
+            onChange={handleChange}
+            className="mt-1 w-full px-4 py-2 border rounded-md"
+          >
+            {['Tools','Weapons','Documents','Writings','Other'].map(t => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+        </label>
+
+        {/* Context & Description */}
+        <label className="block">
+          <span className="text-gray-700">Historical Context</span>
+          <textarea
+            name="context"
+            rows="3"
+            value={form.context}
+            onChange={handleChange}
+            className="mt-1 w-full px-4 py-2 border rounded-md"
+          />
+        </label>
+        <label className="block">
+          <span className="text-gray-700">Short Description</span>
+          <textarea
+            name="description"
+            rows="2"
+            value={form.description}
+            onChange={handleChange}
+            className="mt-1 w-full px-4 py-2 border rounded-md"
+          />
+        </label>
+
+        {/* Created At & Discovered At */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="text-gray-700">Created At</span>
+            <input
+              name="createdAt"
+              value={form.createdAt}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+          <label className="block">
+            <span className="text-gray-700">Discovered At</span>
+            <input
+              name="discoveredAt"
+              value={form.discoveredAt}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+        </div>
+
+        {/* Discovered By & Present Location */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="text-gray-700">Discovered By</span>
+            <input
+              name="discoveredBy"
+              value={form.discoveredBy}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+          <label className="block">
+            <span className="text-gray-700">Present Location</span>
+            <input
+              name="presentLocation"
+              value={form.presentLocation}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 border rounded-md"
+            />
+          </label>
+        </div>
+
+        {/* User Info (readonly) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="text-gray-700">Your Name</span>
+            <input
+              name="adderName"
+              value={form.adderName}
+              readOnly
+              className="mt-1 w-full px-4 py-2 border bg-gray-100 rounded-md"
+            />
+          </label>
+          <label className="block">
+            <span className="text-gray-700">Your Email</span>
+            <input
+              name="adderEmail"
+              value={form.adderEmail}
+              readOnly
+              className="mt-1 w-full px-4 py-2 border bg-gray-100 rounded-md"
+            />
+          </label>
+        </div>
+
+        {/* Submit */}
+        <button
+          type="submit"
+          className="w-full py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700"
+        >
+          Update Artifact
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default UpdateArtifact;
