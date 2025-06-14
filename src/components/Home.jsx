@@ -1,6 +1,9 @@
 
 import { Link, useLoaderData } from 'react-router';
 import ArtifactsCard from './ArtifactsCard';
+import VisitorReviews from './VisitorReviews';
+import ArtifactsShowcase from './ArtifactsShowCase';
+import BannerSlider from './BannerSlider';
 
 const Home = () => {
     // const [showAll, setShowAll] = useState(false);
@@ -14,7 +17,9 @@ const Home = () => {
 //   };
     
     return (
+        
         <div>
+            <BannerSlider></BannerSlider>
             home
             <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3'>
                 {
@@ -30,7 +35,8 @@ const Home = () => {
         </Link>
       </div>
 
-
+<VisitorReviews></VisitorReviews>
+<ArtifactsShowcase></ArtifactsShowcase>
         </div>
     );
 };
