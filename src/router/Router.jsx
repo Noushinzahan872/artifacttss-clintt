@@ -14,6 +14,7 @@ import ErrorPage from "../components/ErrorPage";
 import ArtifactsDetails from "../components/ArtifactsDetails";
 import UpdateArtifact from "../components/UpdateArtifact";
 import PrivateRoute from "../components/PrivateRoute";
+import LikedArtifactsPage from "../components/LikedArtifactsPage";
 
 
 
@@ -45,8 +46,16 @@ const router = createBrowserRouter([
           element:<PrivateRoute>
              <MyArtifacts></MyArtifacts>
           </PrivateRoute>
-
         },
+
+        {
+          path:'likedArtifactsPage',
+          element:<PrivateRoute>
+            <LikedArtifactsPage></LikedArtifactsPage>
+          </PrivateRoute>
+        },
+
+
         {
           path:'updateArtifact/:id',
           loader: ({ params }) => fetch(`http://localhost:3000/artifacts/${params.id}`).then(res => res.json()),

@@ -112,6 +112,15 @@ const [isDark, setIsDark] = useState(() => {
               </NavLink>
             </li>
 
+<li>
+              <NavLink
+                className={({ isActive }) => (isActive ? "text-pink-800 underline" : "")}
+                to="/likedArtifactsPage"
+              >
+            Liked Artifacts Page
+              </NavLink>
+            </li>
+
 
             </ul>
           </div>
@@ -155,6 +164,8 @@ const [isDark, setIsDark] = useState(() => {
               <span className='font-bold text-pink-600'>My Artifacts</span>
               </NavLink>
             </li>
+
+
           </ul>
         </div>
 
@@ -178,7 +189,7 @@ const [isDark, setIsDark] = useState(() => {
                         <Link to="/myArtifacts" className="px-4 py-2  font-semibold text-pink-600 hover:bg-gray-100">My Artifacts</Link>
                       </li>
                       <li>
-                        <Link to="/likedArtifacts" className="px-4 py-2  font-semibold text-pink-600 hover:bg-gray-100">Liked Artifacts</Link>
+                        <Link to="/likedArtifactsPage" className="px-4 py-2  font-semibold text-pink-600 hover:bg-gray-100">Liked Artifacts</Link>
                       </li>
                       <li>
                         <button onClick={handleLogOut} className="px-4 py-2 text-left hover:bg-gray-100  font-semibold text-pink-600 w-full">Logout</button>
