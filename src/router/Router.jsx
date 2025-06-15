@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children:[
         {
            index:true,
-           loader:()=>fetch('http://localhost:3000/artifacts'),
+           loader:()=>fetch('https://artifacts-server-iota.vercel.app/artifacts'),
             Component:Home
         },
         {
@@ -37,12 +37,12 @@ const router = createBrowserRouter([
         },
       {
           path:'allArtifacts',
-          loader:()=>fetch('http://localhost:3000/artifacts'),
+          loader:()=>fetch('https://artifacts-server-iota.vercel.app/artifacts'),
           Component:AllArtifacts
         },
         {
             path:'myArtifacts',
-            // loader:()=>fetch('http://localhost:3000/artifacts'),
+            // loader:()=>fetch('https://artifacts-server-iota.vercel.app/artifacts'),
           element:<PrivateRoute>
              <MyArtifacts></MyArtifacts>
           </PrivateRoute>
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
 
         {
           path:'updateArtifact/:id',
-          loader: ({ params }) => fetch(`http://localhost:3000/artifacts/${params.id}`).then(res => res.json()),
+          loader: ({ params }) => fetch(`https://artifacts-server-iota.vercel.app/artifacts/${params.id}`).then(res => res.json()),
           element:<PrivateRoute>
             <UpdateArtifact></UpdateArtifact>
           </PrivateRoute>
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
 
         {
            path:'artifacts/:id',
-            loader: ({ params }) => fetch(`http://localhost:3000/artifacts/${params.id}`).then(res => res.json()),
+            loader: ({ params }) => fetch(`https://artifacts-server-iota.vercel.app/artifacts/${params.id}`).then(res => res.json()),
             element:<PrivateRoute>
              <ArtifactsDetails></ArtifactsDetails>
           </PrivateRoute>

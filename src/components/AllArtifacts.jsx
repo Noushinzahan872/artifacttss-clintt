@@ -13,7 +13,7 @@ const AllArtifacts = () => {
 
   
   const handleSearch = () => {
-    fetch(`http://localhost:3000/arts?search=${searchText}`)
+    fetch(`https://artifacts-server-iota.vercel.app/arts?search=${searchText}`)
       .then(res => res.json())
       .then(data => setArtifacts(data));
   };

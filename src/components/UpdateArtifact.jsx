@@ -30,7 +30,7 @@ const UpdateArtifact = () => {
 
   // Fetch existing artifact by ID
   useEffect(() => {
-    fetch(`http://localhost:3000/artifacts/${id}`)
+    fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`)
       .then(res => res.json())
       .then(data => {
         setForm(data);
@@ -66,7 +66,7 @@ const UpdateArtifact = () => {
     //  const { _id, ...safeForm } = form;
     console.log("Submitting update with data:", form);
 
-    fetch(`http://localhost:3000/artifacts/${id}`, {
+    fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

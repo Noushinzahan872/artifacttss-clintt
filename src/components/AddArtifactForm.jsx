@@ -51,7 +51,7 @@ const AddArtifactForm = () => {
     
   console.log('Submitting artifact payload:', payload);
 
-    fetch('http://localhost:3000/artifacts', {
+    fetch('https://artifacts-server-iota.vercel.app/artifacts', {
       method: 'POST',
       headers:
        { 'content-type': 'application/json' },

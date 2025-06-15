@@ -16,7 +16,7 @@ const ArtifactsDetails = () => {
   // Toggle like button
   const handleLikeToggle = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/artifacts/${artifact._id}/toggleLike`, {
+      const res = await fetch(`https://artifacts-server-iota.vercel.app/artifacts/${artifact._id}/toggleLike`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

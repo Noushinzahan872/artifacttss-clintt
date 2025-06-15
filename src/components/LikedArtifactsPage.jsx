@@ -1,6 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const LikedArtifactsPage = () => {
   const [likedArtifacts, setLikedArtifacts] = useState([]);
@@ -9,7 +10,7 @@ const LikedArtifactsPage = () => {
   useEffect(() => {
     const fetchLikedArtifacts = async () => {
       try {
-        const res = await fetch('http://localhost:3000/liked-artifacts'); 
+        const res = await fetch('https://artifacts-server-iota.vercel.app/liked-artifacts'); 
         const data = await res.json();
         setLikedArtifacts(data);
         setLoading(false);
@@ -25,6 +26,10 @@ const LikedArtifactsPage = () => {
   if (loading) return <p className="text-center py-10">Loading liked artifacts...</p>;
 
   return (
+    <>
+    <Helmet>
+      <title>Liked Artifacts</title>
+    </Helmet>
     <div className="min-h-screen p-10">
       <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
         All Liked Artifacts
@@ -56,6 +61,7 @@ const LikedArtifactsPage = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

@@ -16,7 +16,7 @@ const MyArtifacts = () => {
   // Fetch artifacts for logged-in user
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/artifact/${user.email}`)
+      fetch(`https://artifacts-server-iota.vercel.app/artifact/${user.email}`)
         .then((res) => res.json())
         .then((data) => setArtifacts(data));
     }
@@ -34,7 +34,7 @@ const MyArtifacts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/artifacts/${id}`, {
+        fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -173,7 +173,7 @@ export default MyArtifacts;
 //   // Fetch artifacts for logged-in user
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/artifact/${user.email}`)
+//       fetch(`https://artifacts-server-iota.vercel.app/artifact/${user.email}`)
 
 //         .then((res) => res.json())
 //         .then((data) => setArtifacts(data));
@@ -192,7 +192,7 @@ export default MyArtifacts;
 //       confirmButtonText: "Yes, delete it!",
 //     }).then((result) => {
 //       if (result.isConfirmed) {
-//         fetch(`http://localhost:3000/artifacts/${id}`, {
+//         fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`, {
 //           method: "DELETE",
 //         })
 //           .then((res) => res.json())

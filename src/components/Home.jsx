@@ -13,7 +13,7 @@ const Home = () => {
   const [topLikedArtifacts, setTopLikedArtifacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/top-liked-artifacts')
+    fetch('https://artifacts-server-iota.vercel.app/top-liked-artifacts')
       .then(res => res.json())
       .then(data => setTopLikedArtifacts(data));
   }, []);
