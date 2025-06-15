@@ -4,6 +4,7 @@
 import React, { useState } from 'react'; 
 import { useLoaderData } from 'react-router';
 import ArtifactsCard from './ArtifactsCard';
+import { Helmet } from 'react-helmet';
 
 const AllArtifacts = () => {
   const loadedArtifacts = useLoaderData(); 
@@ -18,6 +19,10 @@ const AllArtifacts = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>All Artifacts</title>
+    </Helmet>
     <div className="px-4">
       <h2 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
         All Artifacts
@@ -48,6 +53,7 @@ const AllArtifacts = () => {
         }
       </div>
     </div>
+    </>
   );
 };
 

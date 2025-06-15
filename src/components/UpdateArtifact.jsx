@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../contexts/AuthProvider';
 import { useNavigate, useParams } from 'react-router';
+import { Helmet } from 'react-helmet';
 
 
 const UpdateArtifact = () => {
@@ -90,6 +91,10 @@ const UpdateArtifact = () => {
   if (loading) return <p className="text-center mt-10">Loading artifact data...</p>;
 
   return (
+    <>
+    <Helmet>
+      <title>Update Artifact</title>
+    </Helmet>
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
       <form
         onSubmit={handleSubmit}
@@ -236,6 +241,7 @@ const UpdateArtifact = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

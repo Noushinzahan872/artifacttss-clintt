@@ -8,6 +8,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import { Helmet } from 'react-helmet';
 
 const AddArtifactForm = () => {
   const { user } = useContext(AuthContext);
@@ -99,6 +100,10 @@ const AddArtifactForm = () => {
   if (!user) return <p>Loading user…</p>;
 
   return (
+    <>
+    <Helmet>
+      <title>Add Artifacts</title>
+    </Helmet>
     <div className="min-h-screen flex items-center justify-center p-6">
       <form
         onSubmit={handleSubmit}
@@ -251,6 +256,7 @@ const AddArtifactForm = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

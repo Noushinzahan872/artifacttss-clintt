@@ -45,7 +45,7 @@ const LikedArtifactsPage = () => {
                 className="h-48 w-full object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-bold">{artifact.name}</h3>
+                <h3 className="text-lg text-pink-600 font-bold">{artifact.name}</h3>
                 <p className="text-sm text-gray-600">{artifact.description}</p>
                 <p className="text-xs mt-2 text-gray-400">
                   👍 {artifact.likes?.length || 0}

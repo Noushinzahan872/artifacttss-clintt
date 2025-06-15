@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { AuthContext } from "../contexts/AuthProvider";
 import { Link } from "react-router";
+import { Helmet } from "react-helmet";
 
 
 const MyArtifacts = () => {
@@ -57,6 +58,9 @@ const MyArtifacts = () => {
   }
 
   return (
+    <>
+    <Helmet></Helmet>
+    <title>My Artifacts</title>
     <div className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 overflow-x-auto">
       <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
         My Artifacts
@@ -142,6 +146,7 @@ const MyArtifacts = () => {
         </table>
       </div>
     </div>
+    </>
   );
 };
 
