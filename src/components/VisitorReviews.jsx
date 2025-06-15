@@ -44,7 +44,7 @@ const ReviewCard = ({ name, image, review, stars, index }) => (
       className="w-16 h-16 rounded-full mx-auto mb-4 border-2 border-pink-400 shadow"
     />
     <h3 className="font-semibold text-lg text-pink-600">{name}</h3>
-    <p className="text-gray-600 mt-2 text-sm italic">"{review}"</p>
+    <p className="mt-2 text-sm italic">"{review}"</p>
     <StarRating count={stars} />
   </motion.div>
 );

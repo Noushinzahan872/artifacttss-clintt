@@ -35,8 +35,8 @@ const ArtifactCard = ({ title, description, date, index }) => (
     transition={{ delay: index * 0.2 }}
   >
     <h3 className="text-xl font-semibold text-pink-700">{title}</h3>
-    <p className="mt-2 text-sm text-gray-700 italic">"{description}"</p>
-    <p className="mt-4 text-xs text-gray-500 font-medium">📜 Dated: {date}</p>
+    <p className="mt-2 text-sm  italic">"{description}"</p>
+    <p className="mt-4 text-xs  font-medium">📜 Dated: {date}</p>
   </motion.div>
 );
 

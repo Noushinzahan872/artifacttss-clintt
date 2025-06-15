@@ -144,7 +144,7 @@ const AddArtifactForm = () => {
             onChange={handleChange}
             className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-indigo-500"
           >
-            {['Tools','Weapons','Documents','Writings','Other'].map(t => (
+            {['Tools','Weapons','Documents','Writings','Jelwery','Other'].map(t => (
               <option key={t} value={t}>{t}</option>
             ))}
           </select>

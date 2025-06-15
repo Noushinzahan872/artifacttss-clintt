@@ -1,18 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
 
-import { Navigate } from 'react-router';
-import { AuthContext } from '../contexts/AuthProvider';
 
+import React, { useEffect, useState } from 'react';
 
 const LikedArtifactsPage = () => {
-  const { user } = useContext(AuthContext);
   const [likedArtifacts, setLikedArtifacts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchLikedArtifacts = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/liked-artifacts?email=${user.email}`);
+        const res = await fetch('http://localhost:3000/liked-artifacts'); 
         const data = await res.json();
         setLikedArtifacts(data);
         setLoading(false);
@@ -22,33 +19,37 @@ const LikedArtifactsPage = () => {
       }
     };
 
-    if (user?.email) {
-      fetchLikedArtifacts();
-    }
-  }, [user?.email]);
-
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+    fetchLikedArtifacts(); 
+  }, []);
 
   if (loading) return <p className="text-center py-10">Loading liked artifacts...</p>;
 
   return (
     <div className="min-h-screen p-10">
-      
       <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
-          Liked Artifacts
-        </h2>
+        All Liked Artifacts
+      </h2>
+
       {likedArtifacts.length === 0 ? (
-        <p className="text-center text-gray-500">You haven't liked any artifacts yet.</p>
+        <p className="text-center text-gray-500">No artifacts have been liked yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {likedArtifacts.map(artifact => (
-            <div key={artifact._id} className="card bg-base-100 shadow-xl p-4 rounded-lg">
-              <img src={artifact.imageUrl} alt={artifact.name} className="h-48 w-full object-cover rounded-lg" />
-              <div className="mt-4">
-                <h3 className="text-xl font-semibold">{artifact.name}</h3>
-                <p className="text-sm text-gray-500">{artifact.description}</p>
+          {likedArtifacts.map((artifact) => (
+            <div
+              key={artifact._id}
+              className="card bg-white shadow-lg border rounded-lg overflow-hidden"
+            >
+              <img
+                src={artifact.imageUrl}
+                alt={artifact.name}
+                className="h-48 w-full object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-lg font-bold">{artifact.name}</h3>
+                <p className="text-sm text-gray-600">{artifact.description}</p>
+                <p className="text-xs mt-2 text-gray-400">
+                  👍 {artifact.likes?.length || 0}
+                </p>
               </div>
             </div>
           ))}
@@ -59,3 +60,11 @@ const LikedArtifactsPage = () => {
 };
 
 export default LikedArtifactsPage;
+
+
+
+
+
+
+
+
