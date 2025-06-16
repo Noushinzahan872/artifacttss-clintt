@@ -1,12 +1,54 @@
-# React + Vite
+# 🏛️ Artifacts Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Artifacts Client** is a modern, responsive web application built with React 19 and Vite that allows users to explore, like, and learn about historical artifacts from around the world. This project blends educational value with a clean, interactive user experience using animation, dynamic search, and Firebase-powered authentication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## Expanding the ESLint configuration
+👉 [Click here to view the live project](https://artifacts-app.web.app/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Features at a Glance
+
+- 🔍 **Search Artifacts** – Find artifacts by name
+- 💖 **Like/Unlike** – Toggle likes for each artifact (user-based)
+- 🔐 **User Authentication** – Secure login with Firebase
+- 📂 **My Liked Artifacts Page** – View only your liked items (private route)
+- 🎨 **Responsive UI** – Mobile-friendly layout with Tailwind CSS & DaisyUI
+- ✨ **Page Animations** – Smooth transitions using Framer Motion
+- 😵 **Custom Error Pages** – Stylish error fallback with Lottie animations
+
+---
+
+## 🧰 Tech Stack
+
+| Technology         | Purpose                        |
+|-------------------|---------------------------------|
+| **React 19**       | UI Library                     |
+| **Vite**           | Development and build tool     |
+| **Tailwind CSS**   | Styling                        |
+| **DaisyUI**        | Tailwind UI components         |
+| **Framer Motion**  | Animations                     |
+| **Lottie React**   | JSON-based animations          |
+| **Firebase**       | Authentication & Hosting       |
+| **React Router v7**| Client-side routing            |
+| **SweetAlert2**    | Beautiful alerts               |
+| **React Toastify** | Toast notifications            |
+
+---
+
+## 🚀 Getting Started
+
+### 🔧 Prerequisites
+
+- Node.js (v18+ recommended)
+- npm
+
+### 🛠️ Installation
+
+```bash
+git clone https://github.com/Programming-Hero-Web-Course4/b11a11-client-side-Noushinzahan872
+cd artifacts-client
+npm install
