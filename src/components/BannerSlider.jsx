@@ -68,7 +68,7 @@ const BannerSlider = () => {
                   {slide.description}
                 </p>
                 <Link
-                  to="/artifacts"
+                  to="/allArtifacts"
                   className="btn btn-sm sm:btn-md md:btn-lg bg-pink-600 hover:bg-pink-700 text-white rounded-full px-4 py-2 border-none"
                 >
                   {slide.buttonText}

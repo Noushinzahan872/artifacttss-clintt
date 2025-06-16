@@ -108,7 +108,6 @@ const Login = () => {
       <button onClick={googleLogingHandler} className='btn  btn-secondary'> <FcGoogle />Google login</button>
     </div>
         </div>
-        <Footer></Footer>
         </>
     ); 
 };

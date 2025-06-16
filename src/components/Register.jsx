@@ -151,7 +151,6 @@ createUser(email,password)
     
         </div>
         <ToastContainer position="top-right" />
-        <Footer></Footer>
         </div>
     );
 };

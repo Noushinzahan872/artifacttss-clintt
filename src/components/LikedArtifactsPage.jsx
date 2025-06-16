@@ -23,7 +23,7 @@ const LikedArtifactsPage = () => {
     fetchLikedArtifacts(); 
   }, []);
 
-  if (loading) return <p className="text-center py-10">Loading liked artifacts...</p>;
+  if (loading) return <p className="text-center py-10"><span className="loading loading-dots loading-xl"></span></p>;
 
   return (
     <>

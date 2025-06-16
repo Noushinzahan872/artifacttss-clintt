@@ -55,7 +55,7 @@ const [isDark, setIsDark] = useState(() => {
 
     return (
         
-        <div className="navbar p-0 bg-base-100 shadow-sm px-8 md:px-12 lg:px-16 xl:px-24 mb-4">
+        <div className="navbar sticky top-0 z-50 p-0 bg-base-100 shadow-sm px-8 md:px-12 lg:px-16 xl:px-24 mb-4">
         <div className="navbar-start">
           {/* <div>{user&&user.email}</div> */}
           <div className="dropdown">
@@ -113,14 +113,6 @@ const [isDark, setIsDark] = useState(() => {
               </NavLink>
             </li>
 
-<li>
-              <NavLink
-                className={({ isActive }) => (isActive ? "text-pink-800 underline" : "")}
-                to="/likedArtifactsPage"
-              >
-            Liked Artifacts Page
-              </NavLink>
-            </li>
 
 
             </ul>
@@ -218,6 +210,7 @@ const [isDark, setIsDark] = useState(() => {
       </div> 
 
         </div>
+        
     );
 };
 

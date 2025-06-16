@@ -110,6 +110,21 @@ export default ArtifactsDetails;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React from 'react'
 // import { motion } from 'framer-motion';
 // import { Link, useLoaderData } from 'react-router';
