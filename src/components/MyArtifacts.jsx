@@ -14,13 +14,38 @@ const MyArtifacts = () => {
   const [artifacts, setArtifacts] = useState([]);
 
   // Fetch artifacts for logged-in user
-  useEffect(() => {
-    if (user?.email) {
-      fetch(`https://artifacts-server-iota.vercel.app/artifact/${user.email}`)
-        .then((res) => res.json())
-        .then((data) => setArtifacts(data));
+
+  // useEffect(() => {
+  //   if (user?.email) {
+  //     fetch(`https://artifacts-server-iota.vercel.app/artifact/${user.email}`)
+  //       .then((res) => res.json())
+  //       .then((data) => setArtifacts(data));
+  //   }
+  // }, [user]);
+
+
+useEffect(() => {
+  const fetchArtifacts = async () => {
+    if (user?.email && user?.accessToken) {
+      try {
+        const res = await fetch(`https://artifacts-server-iota.vercel.app/artifact/${user.email}`, {
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        });
+        const data = await res.json();
+        setArtifacts(data);
+      } catch (error) {
+        console.error("Error fetching artifacts:", error);
+      }
     }
-  }, [user]);
+  };
+
+  fetchArtifacts();
+}, [user]);
+
+
+
 
   // Handle delete
   const handleDelete = (id) => {
@@ -36,6 +61,9 @@ const MyArtifacts = () => {
       if (result.isConfirmed) {
         fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`, {
           method: "DELETE",
+           headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
         })
           .then((res) => res.json())
           .then((data) => {

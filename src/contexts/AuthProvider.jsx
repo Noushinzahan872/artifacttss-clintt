@@ -38,13 +38,26 @@ const updateUser=(updatedDta)=>{
   };
 
 
-   useEffect(()=>{
-    const unsubscribe=onAuthStateChanged(auth,(currentUser)=>{
-            setUser(currentUser);
-            setLoading(false);
-        });
+  //  useEffect(()=>{
+  //   const unSubscribe=onAuthStateChanged(auth,(currentUser)=>{
+  //           setUser(currentUser);
+  //           setLoading(false);
+  //       });
+
+
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        const token = await currentUser.getIdToken();
+        setUser({ ...currentUser, accessToken: token });
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+
         return()=>{
-          unsubscribe();
+          unSubscribe();
         }
     },[]);
 
