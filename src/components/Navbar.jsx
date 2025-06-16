@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../contexts/AuthProvider';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import logo from '../assets/logo.jpeg'
+import logo from '../assets/logoo.png'
 
 
 const Navbar = () => {
@@ -118,9 +118,9 @@ const [isDark, setIsDark] = useState(() => {
             </ul>
           </div>
           <h2 className="text-3xl font-extrabold  bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
-          Artifacts
+          Artifactum
         </h2>
-        <img className='w-[80px] h-[50px]' src={logo}></img>
+        <img className='w-[100px] h-[100px]' src={logo}></img>
 
         </div>
   

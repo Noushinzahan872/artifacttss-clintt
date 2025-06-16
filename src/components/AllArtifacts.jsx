@@ -11,7 +11,11 @@ const AllArtifacts = () => {
  
   const [loading, setLoading] = useState(true); 
   const [artifacts, setArtifacts] = useState([]); 
-  const [searchText, setSearchText] = useState(''); 
+  const [searchText, setSearchText] = useState('');
+   
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   // loading after data is received
   useEffect(() => {

@@ -33,9 +33,6 @@ const AboutUs = () => {
           </p>
         </div>
 
-        <div className="mt-6">
-          <p className="text-sm text-gray-500 italic">Crafted with ❤️ by Team HistoFind</p>
-        </div>
       </div>
     </motion.div>
   );

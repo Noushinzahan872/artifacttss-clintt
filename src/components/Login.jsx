@@ -72,7 +72,9 @@ const Login = () => {
       
         <div className='flex justify-center min-h-screen items-center'>
            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <Lottie style={{width:'200px'}} animationData={loginLottie} loop={true}></Lottie>
+           <div className='flex items-center justify-center'>
+             <Lottie style={{width:'200px'}} animationData={loginLottie} loop={true}></Lottie>
+           </div>
            <h2 className="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
         Login In Now
       </h2>
