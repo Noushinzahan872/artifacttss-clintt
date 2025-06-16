@@ -47,7 +47,7 @@ const ArtifactsDetails = () => {
           <motion.img
             src={artifact.imageUrl}
             alt={artifact.name}
-            className="w-full h-80 object-cover"
+            className="w-full  object-cover"
             whileHover={{ scale: 1.05 }}
           />
         </div>
@@ -110,98 +110,6 @@ export default ArtifactsDetails;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import { motion } from 'framer-motion';
-// import { Link, useLoaderData } from 'react-router';
-
-// const ArtifactsDetails = () => {
-//   const artifact = useLoaderData();
-
-//   return (
-//     <div className="min-h-screen  px-4 py-10">
-//       <motion.div
-//         initial={{ opacity: 0, y: 30 }}
-//         animate={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.5 }}
-//         className="max-w-6xl mx-auto shadow-2xl rounded-2xl overflow-hidden flex flex-col lg:flex-row"
-//       >
-//         {/* Image Section */}
-//         <div className="lg:w-1/2">
-//           <motion.img
-//             src={artifact.imageUrl}
-//             alt={artifact.name}
-//             className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-//             whileHover={{ scale: 1.05 }}
-//           />
-//         </div>
-
-//         {/* Details Section */}
-//         <div className="lg:w-1/2 p-8 space-y-5">
-//           <h2 className="text-3xl font-bold text-pink-600">{artifact.name}</h2>
-
-//           <div>
-//             <p className=" font-semibold">Type:</p>
-//             <p>{artifact.type}</p>
-//           </div>
-
-//           <div>
-//             <p className="font-semibold">Description:</p>
-//             <p>{artifact.description}</p>
-//           </div>
-
-//           <div>
-//             <p className="font-semibold">Historical Context:</p>
-//             <p>{artifact.context}</p>
-//           </div>
-
-//           <div>
-//             <p className="font-semibold">Present Location:</p>
-//             <p>{artifact.presentLocation}</p>
-//           </div>
-
-//           <div>
-//             <p className="font-semibold">Discovered By:</p>
-//             <p>{artifact.discoveredBy}</p>
-//           </div>
-
-//           <div>
-//             <p className="font-semibold">Discovered At:</p>
-//             <p>{artifact.discoveredAt}</p>
-//           </div>
-
-//           <div>
-//             <button className="btn btn-outline btn-info">
-//               ❤️ Like: {artifact.likes?.length || 0}
-//             </button>
-//           </div>
-
-//           <div>
-//             <Link to="/allArtifacts" className="btn btn-secondary mt-4">
-//                Back to All Artifacts
-//             </Link>
-//           </div>
-//         </div>
-//       </motion.div>
-//     </div>
-//   );
-// };
-
-// export default ArtifactsDetails;
 
 
 

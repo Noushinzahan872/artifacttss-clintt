@@ -22,7 +22,7 @@ const AddArtifactForm = () => {
     adderName: '',
     adderEmail: ''
   });
-//   const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -45,7 +45,7 @@ const AddArtifactForm = () => {
 
     const payload = { ...form, likes: 0 };
     
-  console.log('Submitting artifact payload:', payload);
+  // console.log('Submitting artifact payload:', payload);
 
     fetch('https://artifacts-server-iota.vercel.app/artifacts', {
       method: 'POST',
@@ -93,10 +93,10 @@ const AddArtifactForm = () => {
           draggable: true
         });
       })
-    //   .finally(() => setLoading(false));
+      // .finally(() => setLoading(false));
   };
 
-  if (!user) return <p>Loading user…</p>;
+  if (!user) return <div className='flex justify-center items-center'><p><span className="loading loading-dots loading-xl"></span></p></div>;
 
   return (
     <>
