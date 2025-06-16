@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 
 const UpdateArtifact = () => {
     const { user } = useContext(AuthContext);
-  const { id } = useParams(); // Get artifact ID from route param
+  const { id } = useParams(); 
   const navigate = useNavigate();
   
 
@@ -63,13 +63,14 @@ const UpdateArtifact = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //  const { _id, ...safeForm } = form;
+    
     console.log("Submitting update with data:", form);
 
     fetch(`https://artifacts-server-iota.vercel.app/artifacts/${id}`, {
       method: 'PUT',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Authorization: `Bearer ${user.accessToken}`
       },
       body: JSON.stringify(form)
     })
@@ -77,7 +78,7 @@ const UpdateArtifact = () => {
       .then(data => {
         if (data.modifiedCount > 0) {
           Swal.fire('Success', 'Artifact updated successfully!', 'success');
-          navigate('/allArtifacts'); // or wherever you want to go
+          navigate('/allArtifacts'); 
         } else {
           Swal.fire('Notice', 'No changes were made.', 'info');
         }

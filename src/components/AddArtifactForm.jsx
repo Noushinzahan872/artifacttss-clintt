@@ -1,9 +1,5 @@
 
 
-
-
-
-// AddArtifactForm.jsx
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthProvider';
 import Swal from 'sweetalert2';
@@ -54,7 +50,10 @@ const AddArtifactForm = () => {
     fetch('https://artifacts-server-iota.vercel.app/artifacts', {
       method: 'POST',
       headers:
-       { 'content-type': 'application/json' },
+       { 
+        'content-type': 'application/json',
+        Authorization: `Bearer ${user.accessToken}` 
+       },
       body: JSON.stringify(payload)
     })
       .then(res => res.json())
