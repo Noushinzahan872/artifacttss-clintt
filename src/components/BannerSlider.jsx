@@ -53,7 +53,7 @@ const BannerSlider = () => {
           <SwiperSlide key={index}>
             <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px]">
               <img
-                className="w-full h-full object-cover"
+                className="w-full h-full  object-cover"
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
               />
