@@ -42,6 +42,7 @@ const Home = () => {
 
       <VisitorReviews />
       <ArtifactsShowcase />
+      
     </div>
   );
 };

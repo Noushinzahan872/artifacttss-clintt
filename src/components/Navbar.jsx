@@ -107,9 +107,9 @@ const [isDark, setIsDark] = useState(() => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "text-pink-800 underline" : "")}
-                to="/myArtifacts"
+                to="/aboutUs"
               >
-              My Artifacts
+              About Us
               </NavLink>
             </li>
 
@@ -153,9 +153,9 @@ const [isDark, setIsDark] = useState(() => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "text-pink-800 underline" : "")}
-                to="/myArtifacts"
+                to="/aboutUs"
               >
-              <span className='font-bold text-pink-600'>My Artifacts</span>
+              <span className='font-bold text-pink-600'>About Us</span>
               </NavLink>
             </li>
 

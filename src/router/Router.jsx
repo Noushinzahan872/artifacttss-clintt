@@ -15,6 +15,7 @@ import ArtifactsDetails from "../components/ArtifactsDetails";
 import UpdateArtifact from "../components/UpdateArtifact";
 import PrivateRoute from "../components/PrivateRoute";
 import LikedArtifactsPage from "../components/LikedArtifactsPage";
+import AboutUs from "../components/AboutUs";
 
 
 
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
         {
           path:'register',
           Component:Register
+        },
+        {
+          path:'aboutUs',
+          Component:AboutUs
         },
 
         {
