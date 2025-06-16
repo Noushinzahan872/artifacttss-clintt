@@ -45,8 +45,6 @@ useEffect(() => {
 }, [user]);
 
 
-
-
   // Handle delete
   const handleDelete = (id) => {
     Swal.fire({

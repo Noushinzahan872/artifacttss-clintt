@@ -7,6 +7,8 @@ import Swal from 'sweetalert2';
  import { FcGoogle } from "react-icons/fc";
 import Footer from '../components/Footer';
 import { AuthContext } from '../contexts/AuthProvider';
+import Lottie from 'lottie-react';
+import loginLottie from '../assets/signin.json'
 
 
 const Login = () => {
@@ -70,7 +72,10 @@ const Login = () => {
       
         <div className='flex justify-center min-h-screen items-center'>
            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <h2 className='text-2xl font-semibold text-center'>Login your account</h2>
+            <Lottie style={{width:'200px'}} animationData={loginLottie} loop={true}></Lottie>
+           <h2 className="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+        Login In Now
+      </h2>
       <div className="card-body">
         <form onSubmit={handleLogin} className="fieldset">
           {/* email */}

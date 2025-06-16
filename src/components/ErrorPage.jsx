@@ -6,11 +6,12 @@ const ErrorPage = () => {
     return (
         <div>
             <div className='py-24 text-center'>
+              
         <h1 className='mb-8 text-7xl font-thin text-gray-900'>
           {error?.status || 404}
         </h1>
         <p className='mb-3 text-xl font-bold text-gray-900 md:text-2xl'>
-          {error?.error?.message || 'Something Went Wrong!'}
+          {error?.error?.message || 'Opps Something Went Wrong!'}
         </p>
 
        <Link to='/'>
