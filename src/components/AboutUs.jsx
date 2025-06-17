@@ -1,8 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
   return (
+    <>
+    <Helmet>
+      <title>About Us</title>
+    </Helmet>
     <motion.div
       className="min-h-screen  px-6 py-16"
       initial={{ opacity: 0, y: 40 }}
@@ -11,9 +16,9 @@ const AboutUs = () => {
     >
       <div className="max-w-5xl mx-auto text-center">
          <h2 className="text-4xl font-extrabold text-center mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
-       About Us
+       About Us 
       </h2>
-
+         
 
         <div className="bg-white border border-purple-200 rounded-xl shadow-md p-6 mb-6">
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -35,6 +40,7 @@ const AboutUs = () => {
 
       </div>
     </motion.div>
+    </>
   );
 };
 

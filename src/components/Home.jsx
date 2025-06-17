@@ -24,7 +24,7 @@ const Home = () => {
             <title>Home</title>
         </Helmet>
       <BannerSlider />
-      <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+      <h2 className="text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg mt-10">
           Features of Artifacts
         </h2>
 

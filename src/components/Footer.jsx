@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedinIn, FaSquareYoutube } from 'react-icons/fa6';
+import { MdOutlineHistoryEdu } from 'react-icons/md';
 
 const Footer = () => {
     return (
@@ -11,9 +12,13 @@ const Footer = () => {
 				<div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
 					
 				</div>
+
+				<div className='flex'>
+					<span className='text-4xl text-pink-500'><MdOutlineHistoryEdu /></span>
 				<h2 className="text-2xl font-extrabold  bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
           Artifacts
         </h2>
+				</div>
 			</a>
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
