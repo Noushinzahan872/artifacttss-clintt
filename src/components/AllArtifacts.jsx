@@ -17,7 +17,7 @@ const AllArtifacts = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // loading after data is received
+ 
   useEffect(() => {
     if (loadedArtifacts) {
       setArtifacts(loadedArtifacts);
@@ -59,7 +59,7 @@ const AllArtifacts = () => {
         <button onClick={handleSearch} className="btn btn-secondary">Search</button>
       </div>
 
-      {/*  Search Loading */}
+      {/*  Search */}
       {
         loading ? (
           <div className="flex justify-center py-10 col-span-3">

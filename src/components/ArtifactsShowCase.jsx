@@ -1,4 +1,4 @@
-// ArtifactShowcase.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import animateImage from '../assets/animateHistory.png'
@@ -53,7 +53,7 @@ const ArtifactShowcase = () => {
       </motion.h2>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-10">
-        {/* LEFT: Animated Image */}
+        {/* Image */}
         <motion.div
           className="lg:w-1/2 w-full"
           initial={{ opacity: 0, x: -50 }}

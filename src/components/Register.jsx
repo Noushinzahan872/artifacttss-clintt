@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import { AuthContext } from '../contexts/AuthProvider';
 import Lottie from 'lottie-react';
 import registerLottie from '../assets/register.json'
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
 
@@ -97,7 +98,9 @@ createUser(email,password)
 
     return (
         <div>
-       
+       <Helmet>
+        <title>Register</title>
+       </Helmet>
             <div className='flex justify-center min-h-screen items-center'>
 
            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

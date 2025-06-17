@@ -120,12 +120,11 @@ const [isDark, setIsDark] = useState(() => {
           </div>
 <div className='flex'>
   <span className='text-4xl text-pink-500'><MdOutlineHistoryEdu /></span>
-</div>
+
           <h2 className="text-3xl font-extrabold  bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 bg-clip-text text-transparent drop-shadow-lg">
           Artifactum 
         </h2>
-        
-        {/* <img className='w-[100px] h-[100px]' src={logo}></img> */}
+        </div>
 
         </div>
   
@@ -205,13 +204,6 @@ const [isDark, setIsDark] = useState(() => {
 
 <button onClick={toggleTheme}>{isDark?<FaMoon></FaMoon>:<FaSun/>}</button>
 
-{/* 
-<img className='w-12 rounded-full' src={`${user ? user.photoURL:" "}`} alt=""/>
-{ user?(<button onClick={handleLogOut} className=' btn btn-secondary rounded'>LogOut</button>):
-
-(<Link to='/login' className="btn  md:block lg:block btn-secondary rounded">login</Link>)} */}
-
-        {/* <Link to='/login' className="btn  md:block lg:block btn-secondary rounded">login</Link> */}
       </div> 
 
         </div>
@@ -220,3 +212,22 @@ const [isDark, setIsDark] = useState(() => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
+<img className='w-12 rounded-full' src={`${user ? user.photoURL:" "}`} alt=""/>
+{ user?(<button onClick={handleLogOut} className=' btn btn-secondary rounded'>LogOut</button>):
+
+(<Link to='/login' className="btn  md:block lg:block btn-secondary rounded">login</Link>)} */}

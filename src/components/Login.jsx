@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import { AuthContext } from '../contexts/AuthProvider';
 import Lottie from 'lottie-react';
 import loginLottie from '../assets/signin.json'
+import { Helmet } from 'react-helmet';
 
 
 const Login = () => {
@@ -69,7 +70,9 @@ const Login = () => {
 
     return (
       <>
-      
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
         <div className='flex justify-center min-h-screen items-center'>
            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
            <div className='flex items-center justify-center'>

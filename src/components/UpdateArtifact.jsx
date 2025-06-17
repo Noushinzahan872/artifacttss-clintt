@@ -105,7 +105,6 @@ const UpdateArtifact = () => {
             Update Artifacts
           </h2>
 
-          {/* Reuse the same form fields as in AddArtifactForm */}
           {/* Name & Image URL */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <label className="block">
@@ -130,7 +129,7 @@ const UpdateArtifact = () => {
             </label>
           </div>
 
-          {/* Type Dropdown */}
+          {/* Dropdown */}
           <label className="block">
             <span className="text-gray-500">Type</span>
             <select

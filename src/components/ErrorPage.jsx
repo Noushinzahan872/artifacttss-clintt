@@ -1,14 +1,19 @@
 
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useRouteError } from 'react-router';
 
 const ErrorPage = () => {
   const error = useRouteError();
 
   return (
+    <>
+    <Helmet>
+      <title>Error</title>
+    </Helmet>
     <div className="flex flex-col justify-center items-center min-h-screen  px-4">
-      {/*  Animation */}
+      
       <div className="max-w-md mb-6">
         <lottie-player
           src="https://assets10.lottiefiles.com/packages/lf20_JkVxPf.json"
@@ -19,7 +24,6 @@ const ErrorPage = () => {
         ></lottie-player>
       </div>
 
-      {/* Error Info */}
       <h1 className="text-6xl font-extrabold text-pink-600 mb-2">
         {error?.status || 404}
       </h1>
@@ -32,6 +36,7 @@ const ErrorPage = () => {
         <button className="btn btn-secondary">Go To Home</button>
       </Link>
     </div>
+    </>
   );
 };
 
