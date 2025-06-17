@@ -199,7 +199,7 @@ const [isDark, setIsDark] = useState(() => {
               }
             </div>
           ) : (
-            <Link to="/login" className="btn btn-secondary rounded">Login</Link>
+            <Link to="/login" className="btn btn-secondary cursor-pointer rounded">Login</Link>
           )
         }
 

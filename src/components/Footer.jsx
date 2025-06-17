@@ -16,7 +16,7 @@ const Footer = () => {
 				<div className='flex'>
 					<span className='text-4xl text-pink-500'><MdOutlineHistoryEdu /></span>
 				<h2 className="text-2xl font-extrabold  bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
-          Artifacts
+          Artifactum
         </h2>
 				</div>
 			</a>

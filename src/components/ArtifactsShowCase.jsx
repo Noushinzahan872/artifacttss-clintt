@@ -68,7 +68,6 @@ const ArtifactShowcase = () => {
           />
         </motion.div>
 
-        {/* RIGHT: 4 Vertical Cards */}
         <div className="lg:w-1/2 w-full flex flex-col gap-6">
           {artifacts.map((artifact, index) => (
             <ArtifactCard key={index} {...artifact} index={index} />

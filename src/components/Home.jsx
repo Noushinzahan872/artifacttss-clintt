@@ -7,6 +7,7 @@ import ArtifactsShowcase from './ArtifactsShowCase';
 import BannerSlider from './BannerSlider';
 import { Link } from 'react-router';
 import { Helmet } from 'react-helmet';
+import ArtifactsFeatures from './ArtifactsFeatures';
 
 
 const Home = () => {
@@ -42,6 +43,7 @@ const Home = () => {
 
       <VisitorReviews />
       <ArtifactsShowcase />
+      <ArtifactsFeatures></ArtifactsFeatures>
       
     </div>
   );
