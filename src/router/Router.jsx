@@ -16,6 +16,7 @@ import UpdateArtifact from "../components/UpdateArtifact";
 import PrivateRoute from "../components/PrivateRoute";
 import LikedArtifactsPage from "../components/LikedArtifactsPage";
 import AboutUs from "../components/AboutUs";
+import HistoricalArtifactBlog from "../components/HistoricalArtifactBlog";
 
 
 
@@ -77,6 +78,11 @@ const router = createBrowserRouter([
         {
           path:'aboutUs',
           Component:AboutUs
+        },
+        {
+          path:'blog',
+          Component:HistoricalArtifactBlog
+
         },
 
         {
