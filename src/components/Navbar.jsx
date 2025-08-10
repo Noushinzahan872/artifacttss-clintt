@@ -129,9 +129,11 @@ const [isDark, setIsDark] = useState(() => {
 <div className='flex'>
   <span className='text-4xl text-pink-500'><MdOutlineHistoryEdu /></span>
 
+         <Link to="/">
           <h2 className="text-3xl font-extrabold  bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 bg-clip-text text-transparent drop-shadow-lg">
           Artifactum 
         </h2>
+         </Link>
         </div>
 
         </div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedinIn, FaSquareYoutube } from 'react-icons/fa6';
 import { MdOutlineHistoryEdu } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -13,9 +14,11 @@ const Footer = () => {
                 <div className="lg:w-1/3">
                     <a href="#" className="flex items-center justify-center lg:justify-start space-x-2">
                         <MdOutlineHistoryEdu className="text-4xl text-pink-500" />
+                        <Link to="/">
                         <h2 className="text-2xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
                             Artifactum
                         </h2>
+                        </Link>
                     </a>
                 </div>
 
