@@ -222,7 +222,7 @@ const AddArtifactForm = () => {
           </label>
         </div>
 
-        {/* Read‑only User Info */}
+        {/* Read‑only User  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <label className="block">
             <span className="">Your Name</span>
