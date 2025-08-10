@@ -13,7 +13,7 @@ const [dropdownOpen, setDropdownOpen] = useState(false);
 
 
 const handleLogOut=()=>{
-  // console.log('usertrying')
+ 
   logOut()
   .then(()=>{
     // alert('your logged out successful')
@@ -56,7 +56,7 @@ const [isDark, setIsDark] = useState(() => {
 
     return (
         
-        <div className="navbar sticky top-0 z-50 p-0 bg-base-100 shadow-sm px-8 md:px-12 lg:px-16 xl:px-24 mb-4 bg-pink-100">
+        <div className="navbar sticky top-0 z-50 p-0  shadow-sm px-8 md:px-12 lg:px-16 xl:px-24 mb-4 bg-pink-100">
         <div className="navbar-start">
           {/* <div>{user&&user.email}</div> */}
           <div className="dropdown">
